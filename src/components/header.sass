@@ -1,0 +1,81 @@
+$lightGray: #eee
+$dark: #111
+$fontGray: #607d8b
+$mainBackground: #fff
+$lightborderColor: #f0f2f7
+$mediumnBorderColor: #b3b3b3
+header.header
+  line-height: 1.875rem
+  background: #fff
+  nav
+    border-bottom: 1px solid black
+    a
+      display: inline-block
+      width: 4em
+      text-align: center
+      &:hover
+        color: $dark
+        background: $lightGray
+        border-top-left-radius: .3125rem
+        border-top-right-radius: .3125rem
+
+.content
+  margin-top: .625rem
+  padding: .827017rem
+  background: $mainBackground
+  position: relative
+  .article-container
+    .article-list
+      .article
+        margin-top: .827017rem
+        border-bottom: 2px solid $lightborderColor
+        border-radius: .2rem;
+        &:first-child
+          margin-top: .413508rem
+        .title
+          margin: 0
+          margin-bottom: .413508rem
+          line-height: 1.240525rem
+        .abstract
+          font-size: .744315rem
+          color: $fontGray
+        .article-sign
+          display: flex
+          justify-content: space-between
+          line-height: 1.860788rem
+          font-size: .578912rem
+          .user-info
+            .avatar
+              margin-right: .206754rem
+              width: 1.860788rem
+              height: 1.860788rem
+              vertical-align: middle
+  .submit
+    overflow: hidden
+    .form-group
+      label
+        font-size: .744315rem
+        *
+          margin-top: .413508rem
+        input
+          display: block
+          padding: 0
+          width: 100%
+          border: none
+          font-size: 1.323227rem
+          line-height: 2.481051rem
+        textarea
+          display: block
+          width: 100%
+          height: auto
+          min-height: 8.27017rem
+          border: none
+          font-size: .661614rem
+    .submit-button
+      float: right
+      margin: .413508rem .620263rem
+      padding: 0 .413508rem
+      line-height: 1.323227rem
+      background: transparent
+      border-radius: .206754rem
+      border: 1px solid $mediumnBorderColor
