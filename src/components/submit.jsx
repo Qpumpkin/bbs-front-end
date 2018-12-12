@@ -25,10 +25,11 @@ class Submit extends Component {
     e.preventDefault()
     const { title, content } = this.state
     const article = {title, content}
-    const data = await axios.post(api, article)
+    await axios.post(api, article)
     // console.log(data)
   }
   render() {
+    const { title, content } = this.state;
     return (
       <div className="submit">
         <form
@@ -38,12 +39,12 @@ class Submit extends Component {
         >
           <div className="form-group">
             <label>标题
-              <input name="title" placeholder="请输入标题"/>
+              <input name="title" value={title} placeholder="请输入标题"/>
             </label>
           </div>
           <div className="form-group">
             <label>内容
-              <textarea name="content" id="article-content" placeholder="请输入正文"/>
+              <textarea name="content" value={content} id="article-content" placeholder="请输入正文"/>
             </label>
           </div>
           <button className="submit-button">发布文章</button>
