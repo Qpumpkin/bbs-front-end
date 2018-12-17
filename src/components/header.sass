@@ -8,6 +8,7 @@ $lightborderColor: #f0f2f7
 $mediumnBorderColor: #b3b3b3
 $fade: rgba(26,26,26,.65)
 $white: #fff
+$alertColor: #ff2e4c
 
 .click-able
   cursor: pointer
@@ -53,14 +54,24 @@ $white: #fff
         text-align: center
       .form
         padding: 1em 2em
-        input
-          display: block
-          padding: 0
-          width: 100%
-          font-size: .620263rem
-          line-height: 1.984841rem
-          border: none
-          border-bottom: 1px solid $lightGrey
+        .input-wrap
+          position: relative
+          .error
+            position: absolute
+            top: 0
+            right: 0
+            line-height: 1.984841rem
+            font-size: .49621rem
+            color: $alertColor
+
+          input
+            display: block
+            padding: 0
+            width: 100%
+            font-size: .620263rem
+            line-height: 1.984841rem
+            border: none
+            border-bottom: 1px solid $lightGrey
         .button
           margin-top: 2em;
           text-align: center

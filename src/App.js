@@ -17,11 +17,18 @@ class App extends Component {
   alertWrapper = (content) => {
     const { alert } = this.state
     this.setState({
+      userInfo: '',
       alert: {
         visible: !alert.visible,
         content: content,
       }
     })
+  }
+  componentWillMount() {
+    const userInfo = localStorage.getItem('user');
+    if (userInfo) {
+      this.setState({ userInfo: JSON.parse(userInfo) });
+    }
   }
   renderWrap() {
     const { visible, content } = this.state.alert
@@ -47,14 +54,17 @@ class App extends Component {
       name: '话题',
       path: 'topic',
     }]
-    const { alert } = this.state
+    const { userInfo } = this.state
     return (
       <React.Fragment>
-        {this.renderWrap(123455, alert)}  
-        <Header navList={navList} alert={this.alertWrapper} />
+        {this.renderWrap()}  
+        <Header navList={navList} userInfo={userInfo} alert={this.alertWrapper} />
         <div className="content">
           <Switch>
-            <Route path="/submit" component={Submit} />
+            <Route
+              path="/submit"
+              render={props => <Submit userInfo={userInfo} {...props} />}
+            />
             <Route path="/topic" component={Topic} />
             <Route path="/userCenter" component={Self} />
             <Route path="/" component={Home} />
