@@ -5,6 +5,7 @@ import Home from './components/home'
 import Submit from './components/submit'
 import Topic from './components/topic'
 import Self from './components/userCenter'
+import Article from './components/article'
 import './App.css'
 
 class App extends Component {
@@ -65,6 +66,7 @@ class App extends Component {
               path="/submit"
               render={props => <Submit userInfo={userInfo} {...props} />}
             />
+            <Route path="/article/:id" component={Article} />
             <Route path="/topic" component={Topic} />
             <Route path="/userCenter" component={Self} />
             <Route path="/" component={Home} />
@@ -75,8 +77,4 @@ class App extends Component {
   }
 }
 
-
-// content = (
-//   div
-// )
 export default App;

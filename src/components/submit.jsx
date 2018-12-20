@@ -12,13 +12,13 @@ class Submit extends Component {
     textarea.style.height = 'auto'
     textarea.style.height = `${textarea.scrollHeight}px`
   }
-  handleChange = ({ target: input }) => {
+  handleChange({ target: input }) {
     // console.log(e.currentTarget)
     const name = input.name
     const value = input.value
     this.setState({ [name]: value })
   }
-  handleSubmit = async (e) => {
+  async handleSubmit(e) {
     e.preventDefault()
     const { id: userId } = this.props.userInfo
     const { title, content } = this.state
@@ -36,11 +36,11 @@ class Submit extends Component {
   render() {
     const { title, content } = this.state;
     return (
-      <div className="submit">
+      <div className="submit module-card">
         <form
           method="post"
-          onChange={this.handleChange}
-          onSubmit={this.handleSubmit}
+          onChange={e => this.handleChange(e)}
+          onSubmit={e => this.handleSubmit(e)}
         >
           <div className="form-group">
             <label>标题
@@ -50,9 +50,10 @@ class Submit extends Component {
           <div className="form-group">
             <label>内容
               <textarea
-                onInput={(e) => this.handleTextAreaInput(e)}
+                onInput={e => this.handleTextAreaInput(e)}
                 name="content"
                 value={content}
+                className="textarea"
                 id="article-content"
                 placeholder="请输入正文"
               />

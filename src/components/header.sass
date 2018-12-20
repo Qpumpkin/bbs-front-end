@@ -10,6 +10,24 @@ $fade: rgba(26,26,26,.65)
 $white: #fff
 $alertColor: #ff2e4c
 
+// css工程化
+.flx
+  display: flex
+.module-card
+  border-radius: 2px
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1)
+  background: $mainBackground
+  margin-top: .661614rem
+  
+.textarea
+  display: block
+  width: 100%
+  height: auto
+  min-height: 8.27017rem
+  border: none
+  font-size: .661614rem
+
+
 .click-able
   cursor: pointer
 .wrap
@@ -116,13 +134,14 @@ header.header
         &:hover
           background: $hoverGrey
           color: $fontGrey
+      
 
 .content
   margin-top: .625rem
-  padding: .827017rem
-  background: $mainBackground
   position: relative
+  
   .article-container
+    padding: .827017rem
     .article-list
       .article
         margin-top: .827017rem
@@ -148,7 +167,9 @@ header.header
               width: 1.860788rem
               height: 1.860788rem
               vertical-align: middle
+  
   .submit
+    padding: .827017rem
     overflow: hidden
     .form-group
       label
@@ -162,13 +183,7 @@ header.header
           border: none
           font-size: 1.323227rem
           line-height: 2.481051rem
-        textarea
-          display: block
-          width: 100%
-          height: auto
-          min-height: 8.27017rem
-          border: none
-          font-size: .661614rem
+        
     .submit-button
       float: right
       margin: .413508rem .620263rem
@@ -177,3 +192,25 @@ header.header
       background: transparent
       border-radius: .206754rem
       border: 1px solid $mediumnBorderColor
+
+  .article-page
+    .article
+      padding: .827017rem
+    .comment
+      padding: 0 .827017rem;
+      .comment-header
+        display: flex
+      .author-info
+        padding: .661614rem 0
+        font-size: .578912rem
+        line-height: 1.571332rem
+        div
+          display: inline-block
+        .avatar
+          height: 1.571332rem
+          width: 1.571332rem
+          img
+            height: 100%
+            width: 100%
+        .name
+      .submit-comment
