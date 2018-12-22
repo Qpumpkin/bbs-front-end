@@ -17,7 +17,7 @@ class Header extends Component {
           {navList.map((nav, idx) => <Link to={`/${nav.path}`} key={idx}>{nav.name}</Link>)}
         </nav>
         <div className="user-bar">{
-          userInfo
+          userInfo.id
           ? <React.Fragment>
               <div className="user-name">{userInfo.name}</div>
               <div className="login-out"><button onClick={() => this.handleLoginOut()}>退出登录</button></div>

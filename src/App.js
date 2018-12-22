@@ -18,7 +18,7 @@ class App extends Component {
   alertWrapper = (content) => {
     const { alert } = this.state
     this.setState({
-      userInfo: '',
+      userInfo: { id: 0, name: '未登录' },
       alert: {
         visible: !alert.visible,
         content: content,
@@ -26,9 +26,16 @@ class App extends Component {
     })
   }
   componentWillMount() {
-    const userInfo = localStorage.getItem('user');
+    const user = localStorage.getItem('user');
+    let userInfo
+    try {
+      userInfo = JSON.parse(user) || { id: 0, name: '未登录' }
+    } catch (e) {
+      console.log('读取userInfo失败。')
+      // userInfo = { id: 0, name: '未登录' }
+    }
     if (userInfo) {
-      this.setState({ userInfo: JSON.parse(userInfo) });
+      this.setState({ userInfo })
     }
   }
   renderWrap() {
@@ -66,7 +73,10 @@ class App extends Component {
               path="/submit"
               render={props => <Submit userInfo={userInfo} {...props} />}
             />
-            <Route path="/article/:id" component={Article} />
+            <Route
+              path="/article/:id"
+              render={props => <Article userInfo={userInfo} {...props} />}
+            />
             <Route path="/topic" component={Topic} />
             <Route path="/userCenter" component={Self} />
             <Route path="/" component={Home} />
