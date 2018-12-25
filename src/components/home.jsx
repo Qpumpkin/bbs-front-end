@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { Form, Field } from './common/form';
 
 const api = 'http://localhost:3001/article'
+
 class Home extends Component {
   state = {
     articleList: [],
@@ -33,13 +33,6 @@ class Home extends Component {
               </li>
             </Link>))}
         </ul>
-        <Form
-          defaultValue={{
-            username: '',
-          }}
-        >
-          <Field name="username"/>
-        </Form>
       </div>
     );
   }
