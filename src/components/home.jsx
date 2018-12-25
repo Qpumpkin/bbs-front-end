@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Form, Field } from './common/form';
 
 const api = 'http://localhost:3001/article'
 class Home extends Component {
@@ -11,9 +12,6 @@ class Home extends Component {
     const { data } = await axios.get(api)
     const articleList = data
     this.setState({ articleList })
-  }
-  linkToArticle({ target }) {
-
   }
   render() {
     const { articleList } = this.state
@@ -35,6 +33,13 @@ class Home extends Component {
               </li>
             </Link>))}
         </ul>
+        <Form
+          defaultValue={{
+            username: '',
+          }}
+        >
+          <Field name="username"/>
+        </Form>
       </div>
     );
   }

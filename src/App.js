@@ -6,24 +6,18 @@ import Submit from './components/submit'
 import Topic from './components/topic'
 import Self from './components/userCenter'
 import Article from './components/article'
+import Mask from './components/common/mask'
 import './App.css'
 
 class App extends Component {
   state = {
-    alert: {
-      visible: false,
-      content: null,
-    },
+    prompt: false,
+    promptType: '',
+    userInfo: null,
   }
-  alertWrapper = (content) => {
-    const { alert } = this.state
-    this.setState({
-      userInfo: { id: 0, name: '未登录' },
-      alert: {
-        visible: !alert.visible,
-        content: content,
-      }
-    })
+  handlePrompt(promptType) {
+    const { prompt } = this.state
+    this.setState({ prompt: !prompt, promptType })
   }
   componentWillMount() {
     const user = localStorage.getItem('user');
@@ -38,19 +32,6 @@ class App extends Component {
       this.setState({ userInfo })
     }
   }
-  renderWrap() {
-    const { visible, content } = this.state.alert
-    return (
-    <div className="wrap" style={{ display: visible ? '' : 'none' }}>
-      <div className="wrap-container">
-        <span className="wrap-close" onClick={() => this.alertWrapper(null)}>X</span>
-        <div className="wrap-content">
-          <h3>你好，<br />希望你有快乐的一天！</h3>
-          {content}
-        </div>
-      </div>
-    </div>);
-  }
   render() {
     const navList = [{
       name: '首页',
@@ -62,11 +43,19 @@ class App extends Component {
       name: '话题',
       path: 'topic',
     }]
-    const { userInfo } = this.state
+    const { prompt, promptType, userInfo } = this.state
     return (
       <React.Fragment>
-        {this.renderWrap()}  
-        <Header navList={navList} userInfo={userInfo} alert={this.alertWrapper} />
+        <Mask
+          prompt={prompt}
+          type={promptType}
+          switchPrompt={() => this.handlePrompt('')}
+        />
+        <Header
+          navList={navList}
+          userInfo={userInfo}
+          handlePrompt={(type) => this.handlePrompt(type)}
+        />
         <div className="content">
           <Switch>
             <Route

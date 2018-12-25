@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import Register from './register'
-import Login from './login'
 import './header.sass'
 
 class Header extends Component {
@@ -10,7 +8,7 @@ class Header extends Component {
     window.location = '/'
   }
   render() {
-    const { navList, alert, userInfo } = this.props
+    const { navList, handlePrompt, userInfo } = this.props
     return (
       <header className="header">
         <nav>
@@ -23,8 +21,8 @@ class Header extends Component {
               <div className="login-out"><button onClick={() => this.handleLoginOut()}>退出登录</button></div>
             </React.Fragment>
           : <React.Fragment>
-              <div className="login"><button onClick={() => alert(<Login />)}>登录</button></div>
-              <div className="register"><button onClick={() => alert(<Register />)}>加入小南瓜</button></div>
+              <div className="login"><button onClick={() => handlePrompt('login')}>登录</button></div>
+              <div className="register"><button onClick={() => handlePrompt('register')}>加入小南瓜</button></div>
             </React.Fragment>}
         </div>
       </header>);

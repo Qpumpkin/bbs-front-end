@@ -21,7 +21,8 @@ $alertColor: #ff2e4c
 
 .click-able
   cursor: pointer
-
+.hidden
+  display: none
 // 网站主题板块
 .module-card
   margin-top: .661614rem
@@ -72,6 +73,7 @@ button
   height: 100vh
   background: $fade
   z-index: 10
+  
   .wrap-container
     position: absolute
     width: 19.675425rem
@@ -81,6 +83,7 @@ button
     bottom: 0
     left: 0
     margin: auto
+    
     .wrap-close
       position: absolute
       top: 20%
@@ -90,6 +93,8 @@ button
       color: $white
       font-weight: bold
       vertical-align: middle
+      cursor: pointer
+
     .wrap-content
       position: absolute
       top: 20%
