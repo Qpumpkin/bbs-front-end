@@ -24,7 +24,7 @@ class Login extends Component {
     try {
       const { data } = await axios.post(api, { username, password })
       localStorage.setItem('user', JSON.stringify(data.userInfo))
-      // window.location = '/'
+      window.location = '/'
     } catch(e) {
       if (e.response && e.response.status) {
         const { data } = e.response
