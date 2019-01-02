@@ -5,24 +5,12 @@ import { Form, Field, Button } from './common/form'
 const api = 'http://localhost:3001/auth/login'
 
 class Login extends Component {
-  // state = {
-  //   data: {
-  //     username: '',
-  //     password: '',
-  //   },
-  //   errors: {},
-  // }
-  // handleChange({ target: input }) {
-  //   const { name, value } = input
-  //   const data = {...this.state.data}
-  //   data[name] = value;
-  //   this.setState({ data })
-  //   console.log(value)
-  // }
   async handleSubmit() {
     const { username, password } = this.state.data
     try {
-      const { data } = await axios.post(api, { username, password })
+      const response = await axios.post(api, { username, password })
+      console.log(response);
+      const { data } = response
       localStorage.setItem('user', JSON.stringify(data.userInfo))
       window.location = '/'
     } catch(e) {
@@ -36,6 +24,21 @@ class Login extends Component {
     }
   }
   render() {
+    const config = {
+      api,
+      success: function(res) {
+        res.json()
+        .then(({ userInfo }) => {
+          localStorage.setItem('user', JSON.stringify(userInfo))
+          window.location = '/'
+        })
+      },
+      error: function(error) {
+        return { errors: {
+          [error.type]: error.message,
+        }}
+      }
+    };
     // const {
     //   data,
     //   errors,
@@ -44,7 +47,7 @@ class Login extends Component {
     return (
       <Form
         defaultValue={{ username: '', password: '' }}
-        onSubmit={this.handleSubmit}
+        config={config}
       >
         <Field name="username" placeholder="请输入用户名" />
         <Field name="password" type="password" placeholder="请输入密码" />
