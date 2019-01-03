@@ -16,6 +16,10 @@
 <img src="https://raw.githubusercontent.com/Qpumpkin/bbs-front-end/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/github%E6%88%AA%E5%9B%BE4.jpg" width="300" /><img src="https://raw.githubusercontent.com/Qpumpkin/bbs-front-end/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/github%E6%88%AA%E5%9B%BE5.jpg" width="300" />
 
 ## commit - 想法记录
+- 201/1/3 21点53分
+> 反思
+---
+> 为了Form组件的文章，我已经很久有一段时间没有给自己的项目写代码了，太执着了。大几千字写下去，虽然在写文章过程中也确实有一些收获，但也许自己能力终究还是没达到那个地步。今天算是用了一下自己的组件。这一个多星期也太过自负，以后应该掌握好度，自负和自卑的心态都太容易崩，不适合做实事。
 
 - 2018/12/21 01点17分
 > 今天添加了article组件，在主页中也添加了路由，在和后端对接的时候发现了一些问题，开始有意识地优化css。SQLITE语句好麻烦啊。不知道以后用多了会不会记下来，可能做业务都用不到吧。
