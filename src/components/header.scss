@@ -1,0 +1,323 @@
+$lightGrey: #eee;
+$hoverGrey: #f2f4fb;
+$dark: #111;
+$fontBlue: #0084ff;
+$fontGrey: #607d8b;
+$mainBackground: #fff;
+$lightborderColor: #f0f2f7;
+$mediumnBorderColor: #b3b3b3;
+$fade: rgba(26,26,26,.65);
+$white: #fff;
+$alertColor: #ff2e4c;
+
+
+// 全局设定
+.content {
+  min-height: 100vh;
+}
+// css工程化
+// 基础css样式快捷类
+.flx {
+  display: flex;
+}
+
+.click-able {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+// 网站主题板块
+.module-card {
+  margin-top: .661614rem;
+  padding: .827017rem;
+  background: $mainBackground;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  
+  .module-header {
+    display: flex;
+    line-height: 1.571332rem;
+    font-size: .578912rem;
+    
+    .author-info {
+      font-size: .578912rem;
+      line-height: 1.571332rem;
+      
+      .avatar {
+        height: 1.571332rem;
+        width: 1.571332rem;
+        margin-right: 1em;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+        .name {
+          min-width: 1.240525rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+button {
+  margin: 0 .620263rem;
+  padding: 0 .413508rem;
+  line-height: 1.323227rem;
+  background: transparent;
+  border-radius: .206754rem;
+  border: 1px solid $mediumnBorderColor;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  height: auto;
+  // min-height: 8.27017rem
+  border: none;
+  font-size: .661614rem;
+  resize: none;
+}
+
+
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $fade;
+  z-index: 10;
+  .wrap-container {
+    position: absolute;
+    width: 19.675425rem;
+    padding: .827017rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  .wrap-close {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    padding: .206754rem .4rem;
+    line-height: 1;
+    color: $white;
+    font-weight: bold;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .wrap-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    padding: .827017rem;
+    width: 15.863567rem;
+    height: auto;
+    background: white;
+    overflow: auto;
+    transform: translateX(-50%);
+    h3 {
+      line-height: 1.860788rem;
+      color: $fontBlue;
+      text-align: center;
+    }
+    .form {
+      padding: 1em 2em;
+      .input-wrap {
+        position: relative;
+        .error {
+          position: absolute;
+          top: 0;
+          right: 0;
+          line-height: 1.984841rem;
+          font-size: .49621rem;
+          color: $alertColor;
+        }
+        input {
+          display: block;
+          padding: 0;
+          width: 100%;
+          font-size: .620263rem;
+          line-height: 1.984841rem;
+          border: none;
+          border-bottom: 1px solid $lightGrey;
+        }
+        .button {
+          margin-top: 2em;
+          text-align: center;
+          button {
+            width: 5em;
+            margin: .413508rem .620263rem;
+            padding: 0 .413508rem;
+            line-height: 1.323227rem;
+            background: transparent;
+            border-radius: .206754rem;
+            border: 1px solid $mediumnBorderColor;
+          }
+        }
+      }
+    }
+  }
+}
+  
+
+    
+
+header.header {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.875rem;
+  font-size: .661614rem;
+  background: $white;
+  nav {
+    border-bottom: 1px solid black;
+    a {
+      display: inline-block;
+      width: 4em;
+      text-align: center;
+      &:hover {
+        color: $dark;
+        background: $lightGrey;
+        border-top-left-radius: .3125rem;
+        border-top-right-radius: .3125rem;
+      }
+    }
+  }
+  .user-bar {
+    display: inline-block;
+    div {
+      display: inline-block;
+      // margin-right: .661614rem
+      button {
+        border: 1px solid;
+        border-radius: .124053rem;
+        background: none;
+        &:hover {
+          background: $hoverGrey;
+          color: $fontGrey;
+        }
+      }
+    }
+  }
+      
+}
+
+.content {
+  margin-top: .625rem;
+  position: relative;
+
+  .article-container {
+    padding: .827017rem;
+
+    .article-list {
+
+      .article {
+        margin-top: .827017rem;
+        border-bottom: 2px solid $lightborderColor;
+        border-radius: .2rem;
+
+        &:first-child {
+          margin-top: .413508rem;
+        }
+        .title {
+          margin: 0;
+          margin-bottom: .413508rem;
+          line-height: 1.240525rem;
+        }
+        .abstract {
+          font-size: .744315rem;
+          color: $fontGrey;
+        }
+        .article-sign {
+          display: flex;
+          justify-content: space-between;
+          line-height: 1.860788rem;
+          font-size: .578912rem;
+        }
+        .user-info {
+          .avatar {
+            margin-right: .206754rem;
+            width: 1.860788rem;
+            height: 1.860788rem;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  
+  .submit {
+    padding: .827017rem;
+    overflow: hidden;
+    .form-group {
+      label {
+        font-size: .744315rem;
+        * {
+          margin-top: .413508rem;
+        }
+        input {
+          display: block;
+          padding: 0;
+          width: 100%;
+          border: none;
+          font-size: 1.323227rem;
+          line-height: 2.481051rem;
+        }
+      }
+      textarea {
+        min-height: 8.27017rem;
+      }
+    }
+
+    .submit-button {
+      float: right;
+      margin: .413508rem .620263rem;
+      padding: 0 .413508rem;
+      line-height: 1.323227rem;
+      background: transparent;
+      border-radius: .206754rem;
+      border: 1px solid $mediumnBorderColor;
+    }
+  }
+
+  .article-page {
+    .comment {
+      overflow: hidden;
+      // padding: 0 .827017rem;
+      .comment-header {
+        .author-info {
+          // padding: .661614rem 0
+          font-size: .578912rem;
+          line-height: 1.571332rem;
+          div {
+            display: inline-block;
+          }
+          .avatar {
+            height: 1.571332rem;
+            width: 1.571332rem;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    form {
+      margin-top: .827017rem;
+      .submit-comment {
+        textarea {
+          height: 4.135085rem;
+        }
+        button {
+          float: right;
+        }
+      }
+    }
+  }
+}

@@ -16,6 +16,10 @@
 <img src="https://raw.githubusercontent.com/Qpumpkin/bbs-front-end/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/github%E6%88%AA%E5%9B%BE4.jpg" width="300" /><img src="https://raw.githubusercontent.com/Qpumpkin/bbs-front-end/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/github%E6%88%AA%E5%9B%BE5.jpg" width="300" />
 
 ## commit - 想法记录
+- 2019/1/9 11点42分
+> 新的开始
+> 本来就是自学，自然要不怕犯错走弯路。专业的CSS布局也能让工作变得轻松很多，所以现在开始看CSS揭秘吧！
+
 - 2019/1/3 21点53分
 > 反思
 ---
