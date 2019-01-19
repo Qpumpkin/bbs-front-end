@@ -1,0 +1,64 @@
+@import '../utils.scss';
+
+@function bgPosition($fix, $distance) {
+  @each $axis, $val in $fix {
+    @if $axis == "x" {
+      @return #{$val $distance};
+    } @else {
+      @return #{$distance $val};
+    }
+  }
+}
+
+@mixin backgroundClip($tag, $since, $fixAxis, $shifting...) {
+  $n: $since;
+  @each $dist in $shifting {
+    #{$tag}:nth-child(#{$n}) {
+      background-position: bgPosition($fixAxis, $dist);
+    }
+    $n: $n + 1;
+  }
+}
+
+footer.footer {
+  padding: 6.25rem 1em;
+  padding: 6.25rem calc(50% - 34.375rem);
+  background: $footerBackground;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    dl {
+      width: 31.25rem;
+      dt {
+        font-size: 1.25rem;
+        font-weight: lighter;
+        color: $fontGrey;
+        padding-bottom: .8em;
+        border-bottom: 1px solid $shadowColor1;
+        margin-bottom: .8em;
+      }
+      dd {
+        line-height: 1.25rem;
+        margin-bottom: 1em;
+      }
+    }
+    .share {
+      dd {
+        display: inline-block;
+        height: 1.25rem;
+        width: 1.25rem;
+        margin-right: 5px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px $shadowColor1;
+        background: url('../images/share_button.png');
+        a {
+          display: inline-block;
+          height: 1.25rem;
+          width: 1.25rem;
+          color: transparent;
+        }
+      }
+      @include backgroundClip(dd, 2, ('x': 0), -510px, -390px, -570px, -540px);
+    }
+  }
+}

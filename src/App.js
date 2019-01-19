@@ -6,8 +6,11 @@ import Submit from './components/submit'
 import Topic from './components/topic'
 import Self from './components/userCenter'
 import Article from './components/article'
-import Mask from './components/common/mask'
+import Test from './components/test';
+import Mask from './components/common/mask';
+import Footer from './components/footer';
 import './App.css'
+import './main.scss'
 
 class App extends Component {
   state = {
@@ -37,7 +40,7 @@ class App extends Component {
       name: '首页',
       path: '',
     }, {
-      name: '发表文章',
+      name: '写文章',
       path: 'submit',
     }, {
       name: '话题',
@@ -68,9 +71,11 @@ class App extends Component {
             />
             <Route path="/topic" component={Topic} />
             <Route path="/userCenter" component={Self} />
+            <Route path="/test" component={Test} />
             <Route path="/" component={Home} />
           </Switch>
         </div>
+        <Footer />
       </React.Fragment>
     )
   }

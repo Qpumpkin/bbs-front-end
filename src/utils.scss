@@ -1,0 +1,51 @@
+$lightGrey: #eee;
+$hoverGrey: #f2f4fb;
+$dark: #111;
+$fontBlue: #0084ff;
+$fontGrey: #607d8b;
+$mainBackground: #fff;
+$lightborderColor: #f0f2f7;
+$mediumnBorderColor: #b3b3b3;
+$fade: rgba(26,26,26,.65);
+$white: #fff;
+$alertColor: #ff2e4c;
+$shadowColor5: rgba(0, 0, 0, 0.5);
+$shadowColor1: rgba(0, 0, 0, 0.1);
+$linearGradient: linear-gradient(hsla(0, 0%, 100%, .2), transparent);
+$qpumpkin: #58a;
+$buttonBackground: #58a;
+$footerBackground: #f0f0f0;
+
+$font-title: 24px;
+$font-normal: 16px;
+$font-small: 12px;
+
+@mixin transparent-border($width, $color) {
+  border: .413508rem solid $shadowColor5;
+  background: {
+    clip: padding-box;
+    color: $color;
+  }
+}
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@function multi-border($style, $many, $width, $colors...) {
+  $borders: null;
+  $i: 0;
+  @each $color in $colors {
+    $temp: 0 0 0 $width*($i+1)  $color;
+    @if $i == 0 {
+      $borders: $temp;
+    } @else {
+      $borders: $borders + $temp;
+    }
+    $i: $i + 1;
+    @if $i < $many {
+      $borders: $borders#{','};
+    }
+  }
+  @return $style $borders;
+}

@@ -1,0 +1,141 @@
+@import './utils.scss';
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+// 全局设定
+.content {
+  padding: 1rem;
+  padding: 1rem calc(50% - 34.375rem);
+  flex: 1;
+  margin: auto;
+}
+// css工程化
+// 基础css样式快捷类
+.flx {
+  display: flex;
+}
+
+.click-able {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+.callout {
+  position: relative;
+}
+
+.callout::before {
+  content: "";
+  position: absolute;
+  top: -.4em;
+  left: 1em;
+  padding: .35em;
+  background: inherit;
+  border: inherit;
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(45deg);
+}
+
+.transparent-border {
+  border: .413508rem solid $shadowColor5;
+  background: white;
+  background-clip: padding-box;
+}
+
+.css-test {
+  background: tan;
+  border-radius: .8em;
+  padding: .8em;
+  box-shadow: multi-border(null, 1, .6em, #655);
+  outline: .6em solid #655;
+}
+[class^="test-"] {
+  @include size(300px);
+}
+[class^="test-stripe-"] {
+  background-repeat: repeat;
+}
+.test-stripe-1 {
+  background-image: linear-gradient(#fb3 50%, #58a 0);
+  background-size: 100% 30px;
+}
+.test-stripe-2 {
+  background-image: linear-gradient(to right, #fb3 50%, #58a 0);
+  background-size: 30px 100%;
+}
+.test-stripe-3 {
+  background-image: linear-gradient(45deg, #fb3 50%, #58a 0);
+  background-size: 30px 30px;
+}
+.test-stripe-4 {
+  background-image: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+  background-size: 30px 30px;
+}
+.test-stripe-5 {
+  background-image: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+}
+// 网站主题板块
+.module-card {
+  margin-top: .661614rem;
+  padding: .827017rem;
+  background: $mainBackground;
+  border-radius: 2px;
+  // box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1);
+  // box-shadow: multi-border(null, 3, 5px, yellow, red, blue), 0 2px 5px 20px $shadowColor5;
+  // @include transparent-border(10px, yellow)
+  background: url(./images/yeah.jpeg) no-repeat #58a;
+  background-position: right 20px bottom 10px;
+  background-size: 50px;  
+  .module-header {
+    display: flex;
+    line-height: 1.571332rem;
+    font-size: .578912rem;
+    
+    .author-info {
+      font-size: .578912rem;
+      line-height: 1.571332rem;
+      
+      .avatar {
+        height: 1.571332rem;
+        width: 1.571332rem;
+        margin-right: 1em;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+        .name {
+          min-width: 1.240525rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+button {
+  margin: 0 .620263rem;
+  padding: 0 .413508rem;
+  // line-height: 1.323227rem;
+  color: $white;
+  background: $qpumpkin $linearGradient;
+  box-shadow: 0 .05em .25em $shadowColor5;
+  border-radius: .206754rem;
+  border: 1px solid $shadowColor1;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  height: auto;
+  // min-height: 8.27017rem
+  border: none;
+  font-size: .661614rem;
+  resize: none;
+}
