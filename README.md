@@ -16,6 +16,9 @@
 <img src="https://raw.githubusercontent.com/Qpumpkin/bbs-front-end/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/github%E6%88%AA%E5%9B%BE4.jpg" width="300" /><img src="https://raw.githubusercontent.com/Qpumpkin/bbs-front-end/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/github%E6%88%AA%E5%9B%BE5.jpg" width="300" />
 
 ## commit - 想法记录
+- 2019/1/19 18点19分
+> 开始想清楚自己要做个什么样的网站了，项目大换血。只是由于完美主义吧，想一开始就把项目写得很好，架构都要很好，但这么想之后写一行代码都变得很纠结。其实这么想也没错，如果都是很敷衍的写掏粪代码的话，和做业务又有什么区别呢？只是自己能力不足，心有余而力不足，先从看书学好的设计开始吧！开始看Single page web application。
+
 - 2019/1/9 11点42分
 > 新的开始
 > 本来就是自学，自然要不怕犯错走弯路。专业的CSS布局也能让工作变得轻松很多，所以现在开始看CSS揭秘吧！
