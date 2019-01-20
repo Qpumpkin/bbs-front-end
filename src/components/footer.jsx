@@ -8,9 +8,9 @@ class Footer extends Component {
         <div className="footer-content">
           <dl className="book-mark-nav">
             <dt>书签</dt>
-            <dd><a href="https://www.moocbaba.com/">MOOC爸爸</a></dd>
-            <dd><a href="https://www.wpshushu.com/">WP叔叔</a></dd>
-            <dd><a href="https://www.hostmama.cc/">煮鸡妈妈</a></dd>
+            <dd><i className="fa fa-bookmark" aria-hidden="true" /><a href="https://www.moocbaba.com/">MOOC爸爸</a></dd>
+            <dd><i className="fa fa-bookmark" aria-hidden="true" /><a href="https://www.wpshushu.com/">WP叔叔</a></dd>
+            <dd><i className="fa fa-bookmark" aria-hidden="true" /><a href="https://www.hostmama.cc/">煮鸡妈妈</a></dd>
           </dl>
           <dl className="share">
             <dt>分享</dt>
@@ -21,7 +21,7 @@ class Footer extends Component {
           </dl>
         </div>
         <div className="brand">
-          小南瓜
+         © 小南瓜 2019
         </div>
       </footer>
     );

@@ -1,0 +1,43 @@
+@import '../utils.scss';
+
+div.home {
+  .search-wrapper {
+    width: 100%;
+    padding: 50px 0;
+  }
+  input.search {
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 44px;
+    border: 1px solid $lightGrey;
+    text-indent: 1em;
+  }
+  h1 {
+    margin-bottom: 1rem;
+    padding-top: 3.75rem;
+    font-size: 2rem;
+  }
+  h1 + p {
+    text-align: center;
+  }
+  h2 {
+    margin: 20px 0;
+  }
+  .content-list {
+    display: flex;
+  }
+  figure {
+    width: 20rem;
+    margin-right: 1rem;
+    img {
+      width: inherit;
+      border-radius: 3px;
+      vertical-align: bottom;
+    }
+    figcaption {
+      font-size: $font-medium;
+      margin-top: 1.25rem;
+      text-align: center;
+    }
+  }
+}

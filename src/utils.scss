@@ -18,6 +18,7 @@ $footerBackground: #f0f0f0;
 
 $font-title: 24px;
 $font-normal: 16px;
+$font-medium: 20px;
 $font-small: 12px;
 
 @mixin transparent-border($width, $color) {
@@ -48,4 +49,24 @@ $font-small: 12px;
     }
   }
   @return $style $borders;
+}
+
+@function bgPosition($fix, $distance) {
+  @each $axis, $val in $fix {
+    @if $axis == "x" {
+      @return #{$val $distance};
+    } @else {
+      @return #{$distance $val};
+    }
+  }
+}
+
+@mixin backgroundClip($tag, $since, $fixAxis, $shifting...) {
+  $n: $since;
+  @each $dist in $shifting {
+    #{$tag}:nth-child(#{$n}) {
+      background-position: bgPosition($fixAxis, $dist);
+    }
+    $n: $n + 1;
+  }
 }

@@ -1,25 +1,5 @@
 @import '../utils.scss';
 
-@function bgPosition($fix, $distance) {
-  @each $axis, $val in $fix {
-    @if $axis == "x" {
-      @return #{$val $distance};
-    } @else {
-      @return #{$distance $val};
-    }
-  }
-}
-
-@mixin backgroundClip($tag, $since, $fixAxis, $shifting...) {
-  $n: $since;
-  @each $dist in $shifting {
-    #{$tag}:nth-child(#{$n}) {
-      background-position: bgPosition($fixAxis, $dist);
-    }
-    $n: $n + 1;
-  }
-}
-
 footer.footer {
   padding: 6.25rem 1em;
   padding: 6.25rem calc(50% - 34.375rem);
@@ -40,6 +20,9 @@ footer.footer {
       dd {
         line-height: 1.25rem;
         margin-bottom: 1em;
+        i {
+          margin-right: .5em;
+        }
       }
     }
     .share {
@@ -60,5 +43,10 @@ footer.footer {
       }
       @include backgroundClip(dd, 2, ('x': 0), -510px, -390px, -570px, -540px);
     }
+  }
+  .brand {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid $shadowColor1;
   }
 }
